@@ -9,11 +9,12 @@ import {
   updateTodos,
 } from "@/apis/todos-no-rls";
 import React, { useEffect } from "react";
+import useTodosController from "../hooks/useTodosController";
 
 const TodoContainer = () => {
-  useEffect(() => {
-    deleteTodosHard(12);
-  }, []);
+  const { loading, todos } = useTodosController();
+  console.log(">>loading", loading);
+  console.log(">>Todos", todos);
   return <div>TodoContainer</div>;
 };
 
