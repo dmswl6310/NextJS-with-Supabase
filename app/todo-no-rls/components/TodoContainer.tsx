@@ -1,12 +1,20 @@
 "use client";
-import { getTodos, getTodosById, getTodosBySearch } from "@/apis/todos-no-rls";
+import {
+} from "@/apis/todos-no-rls";
 import React, { useEffect } from "react";
+import useTodosController from "../hooks/useTodosController";
+import TodoList from "@/components/ui/TodoList";
 
 const TodoContainer = () => {
-  useEffect(() => {
-    getTodosBySearch("java");
-  }, []);
-  return <div>TodoContainer</div>;
+  const {
+
+  } = useTodosController();
+
+  return (
+    <div>
+      <TodoList sharedUserFullName="test User" ownerUserId="123123" />
+    </div>
+  );
 };
 
 export default TodoContainer;
