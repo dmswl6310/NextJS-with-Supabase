@@ -34,6 +34,7 @@ export const getTodosBySearch = async (terms: string) => {
     .select("*")
     .is("deleted_at", null)
     .ilike("content", `%${terms}%`)
-    .order("id", { ascending: false });
+    .order("id", { ascending: false })
+    .limit(500);
   return result.data;
 };
