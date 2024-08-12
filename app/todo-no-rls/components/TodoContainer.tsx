@@ -1,21 +1,20 @@
 "use client";
 import {
-  createTodos,
-  deleteTodosHard,
-  deleteTodosSoft,
-  getTodos,
-  getTodosById,
-  getTodosBySearch,
-  updateTodos,
 } from "@/apis/todos-no-rls";
 import React, { useEffect } from "react";
 import useTodosController from "../hooks/useTodosController";
+import TodoList from "@/components/ui/TodoList";
 
 const TodoContainer = () => {
-  const { loading, todos } = useTodosController();
-  console.log(">>loading", loading);
-  console.log(">>Todos", todos);
-  return <div>TodoContainer</div>;
+  const {
+
+  } = useTodosController();
+
+  return (
+    <div>
+      <TodoList sharedUserFullName="test User" ownerUserId="123123" />
+    </div>
+  );
 };
 
 export default TodoContainer;
