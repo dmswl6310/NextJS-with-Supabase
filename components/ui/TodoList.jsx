@@ -66,7 +66,7 @@ const TodoList = ({
               </div>
             </div>
             <div
-              onclick={onCreate}
+              onClick={onCreate}
               className="h-[60px] w-[200px] flex justify-center items-center bg-white border border-black rounded-2xl font-bold cursor-pointer text-[20px]"
             >
               New Task
