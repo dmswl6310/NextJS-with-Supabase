@@ -1,7 +1,6 @@
 import {
   createTodos,
   deleteTodosSoft,
-  getTodos,
   getTodosBySearch,
   getTodosByUserId,
   updateTodos,

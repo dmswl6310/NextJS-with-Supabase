@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { IoShareSocialOutline, IoSearchOutline } from "react-icons/io5";
 import { useCopyToClipboard } from "usehooks-ts";
 import TodoListItem from "./TodoListItem";
+import TodoListItemReadOnly from "./TodoListItemReadOnly";
 
 const TodoList = ({
   sharedUserFullName = "",

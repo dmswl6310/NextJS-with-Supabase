@@ -16,7 +16,7 @@ const SharePage = async (props: SharePageProps) => {
   if (!profile) permanentRedirect("/");
   return (
     <div>
-      <TodoContainer sharedUserFullName={userName??''} ownerUserId={userId} />
+      <TodoContainer sharedUserFullName={userName ?? ""} ownerUserId={userId} />
     </div>
   );
 };
