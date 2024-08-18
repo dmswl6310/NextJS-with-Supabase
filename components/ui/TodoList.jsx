@@ -18,7 +18,7 @@ const TodoList = ({
   const [userSearchInput, setUserSearchInput] = useState("");
   const [copiedText, copy] = useCopyToClipboard();
   const handleCopy = () => {
-    const shareLink = `${"todoList 공유링크"}/share/${ownerUserId}`;
+    const shareLink = `${process.env.NEXT_PUBLIC_AUTH_REDIRECT_TO_HOME}/share/${ownerUserId}`;
     copy(shareLink)
       .then(() => {
         window.alert(`copied! ${shareLink}`);
@@ -78,6 +78,9 @@ const TodoList = ({
         {todoListData?.length >= 1 ? (
           <ul className="flex flex-col gap-6">
             {(todoListData ?? []).map((todo) => {
+              if (isReadOnly) {
+                return <TodoListItemReadOnly key={todo?.id} todo={todo} />;
+              }
               return (
                 <TodoListItem
                   key={todo?.id}

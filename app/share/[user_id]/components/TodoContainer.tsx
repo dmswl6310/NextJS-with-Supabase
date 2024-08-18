@@ -4,10 +4,14 @@ import React, { useEffect } from "react";
 import useTodosController from "../hooks/useTodosController";
 import TodoList from "@/components/ui/TodoList";
 interface TodoContainerProps {
+  sharedUserFullName?: string;
   ownerUserId?: string;
 }
 
-const TodoContainer = ({ ownerUserId }: TodoContainerProps) => {
+const TodoContainer = ({
+  sharedUserFullName,
+  ownerUserId,
+}: TodoContainerProps) => {
   const {
     loading,
     todos,
@@ -20,10 +24,11 @@ const TodoContainer = ({ ownerUserId }: TodoContainerProps) => {
   return (
     <div>
       <TodoList
+        sharedUserFullName={sharedUserFullName}
         ownerUserId={ownerUserId}
         loading={loading}
         todoListData={todos}
-        isReadOnly={false}
+        isReadOnly
         onUpdate={onUpdateTodos}
         onCreate={onCreateEmptyTodos}
         onDelete={onDeleteTodos}
